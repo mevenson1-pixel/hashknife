@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hashknife | Project Management",
-  description: "Project management system for Hashknife Landscape Construction",
+  title: "Hashknife Hotshots | Project Management",
+  description: "Project management system for Hashknife Hotshots",
 };
 
 export default function RootLayout({

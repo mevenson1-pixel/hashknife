@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Briefcase,
   Users,
   Calendar,
-  HardHat,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -24,16 +24,15 @@ export function Sidebar() {
   return (
     <aside className="flex h-full w-60 shrink-0 flex-col bg-[var(--sidebar)] text-[var(--sidebar-foreground)]">
       {/* Branding */}
-      <div className="flex items-center gap-2.5 px-5 py-5 border-b border-[var(--sidebar-border)]">
-        <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[var(--sidebar-primary)]">
-          <HardHat className="h-5 w-5 text-white" />
-        </div>
-        <div>
-          <p className="text-sm font-bold tracking-wide text-white">Hashknife</p>
-          <p className="text-[10px] uppercase tracking-widest text-[var(--sidebar-foreground)]/60">
-            Landscape Construction
-          </p>
-        </div>
+      <div className="flex items-center justify-center px-5 py-5 border-b border-[var(--sidebar-border)]">
+        <Image
+          src="/logo.png"
+          alt="Hashknife Hotshots"
+          width={140}
+          height={80}
+          className="brightness-0 invert"
+          priority
+        />
       </div>
 
       {/* Navigation */}
@@ -62,7 +61,7 @@ export function Sidebar() {
       {/* Footer */}
       <div className="px-5 py-4 border-t border-[var(--sidebar-border)]">
         <p className="text-[11px] text-[var(--sidebar-foreground)]/40">
-          Hashknife PM v1.0
+          Hashknife Hotshots PM v1.0
         </p>
       </div>
     </aside>
