@@ -1,0 +1,7 @@
+node_modules/
+converted_photos/
+package-lock.json
+convert_photos.js
+package.json
+JobPhotos/
+photos/

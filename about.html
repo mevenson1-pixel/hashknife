@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Hashknife Hotshots</title>
+  <meta name="description" content="Learn the story behind Hashknife Hotshots — founded in 2020, our name traces back to the legendary Hashknife Pony Express of 1860.">
+  <link rel="icon" type="image/png" href="hashknife_Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-two-col img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      object-fit: cover;
+    }
+    .about-section-text h2 {
+      margin-bottom: 1.25rem;
+    }
+    .about-section-text h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+    }
+    .about-section-text p {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+    .about-section-text h2 + h2 {
+      margin-top: 2.5rem;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 0;
+    }
+    .team-photo-wrap {
+      position: relative;
+    }
+    .team-photo-wrap img {
+      aspect-ratio: 4/3;
+    }
+    .founded-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      border: 4px solid var(--white);
+    }
+    .founded-badge strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--sand);
+      line-height: 1;
+    }
+    .founded-badge span {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    @media (max-width: 768px) {
+      .about-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .founded-badge { right: 0; bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
+          <img src="hashknife_Logo.png" alt="Hashknife Hotshots">
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="landscape-construction.html">Landscape Construction</a></li>
+              <li><a href="landscape-maintenance.html">Landscape Maintenance</a></li>
+              <li><a href="hardscape-masonry.html">Hardscape &amp; Masonry</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== PAGE HERO ======== -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('photos/Modera Reserve Kierland/IMG_7927.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>About</span>
+        </nav>
+        <p class="eyebrow">about</p>
+        <h1><strong>The Story</strong> of Hashknife Hotshots</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== COMPANY HISTORY ======== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="about-two-col">
+
+        <div class="about-section-text fade-up">
+          <h3>Company History</h3>
+          <h2>The Hashknife Legend</h2>
+          <span class="divider" style="margin-bottom:1.5rem;"></span>
+          <p>Founded in 1860, the Hashknife Pony Express was known as the fastest, most dependable way to get mail across the Old West. Facing bandits, extreme weather, and treacherous terrain, these men on horseback running at breakneck speeds let nothing stand in their way of getting the job done.</p>
+          <p>The dependability of the Hashknife outfit was well known back then, and it is still alive and well today.</p>
+        </div>
+
+        <div class="fade-up fade-up-delay-1">
+          <img src="about_assets/butch-cavendish.jpg" alt="Butch Cavendish – Hashknife Pony Express, Old West" loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ======== MISSION & TEAM ======== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="about-two-col">
+
+        <div class="team-photo-wrap fade-up">
+          <img src="about_assets/hashknife-team-photo.jpg" alt="Hashknife Hotshots Team" loading="lazy">
+          <div class="founded-badge">
+            <strong>2020</strong>
+            <span>Est.</span>
+          </div>
+        </div>
+
+        <div class="about-section-text fade-up fade-up-delay-1">
+          <h3>Why Choose Us</h3>
+          <h2>Mission Statement</h2>
+          <span class="divider" style="margin-bottom:1.5rem;"></span>
+          <p>Hashknife Hotshots is dedicated to providing unbeatable customer service, clear communication, and exceptional results, guaranteed.</p>
+
+          <h2 style="margin-top:2.5rem;">Who We Work With</h2>
+          <span class="divider" style="margin-bottom:1.5rem;"></span>
+          <p>Our team works with commercial, municipal, and residential clients seeking landscape solutions for various sized projects. We're proud to partner with construction industry leaders as our experienced and dedicated team strives to help each client achieve their landscaping goals.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA ======== -->
+  <section class="cta-banner">
+    <div class="cta-banner-bg" style="background-image: url('photos/Modera Reserve Kierland/IMG_7915.jpg');"></div>
+    <div class="cta-banner-overlay"></div>
+    <div class="container">
+      <div class="cta-banner-content fade-up">
+        <p class="eyebrow">Ready to Start?</p>
+        <h2>Get a Quote for <span>Your Project</span></h2>
+        <p>Have questions about our services? Interested in receiving design assistance from our expert team? Fill out the form and we will be in touch soon.</p>
+        <a href="contact.html" class="btn btn-sand">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="hashknife_Logo.png" alt="Hashknife Hotshots">
+          </div>
+          <p>Modern Methods, Legendary Service. Hashknife Hotshots is dedicated to providing unbeatable customer service, clear communication, and exceptional results — guaranteed.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Services</p>
+          <ul class="footer-links">
+            <li><a href="landscape-construction.html">Landscape Construction</a></li>
+            <li><a href="landscape-maintenance.html">Landscape Maintenance</a></li>
+            <li><a href="hardscape-masonry.html">Hardscape &amp; Masonry</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Company</p>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact Us</p>
+          <div class="footer-contact-items">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>7324 South Atwood Suite #202<br>Mesa, AZ 85212</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:4809558482">480-955-8482</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@hashknifehotshots.com">info@hashknifehotshots.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Hashknife Hotshots. All rights reserved.</p>
+        <p>Mesa, AZ &mdash; Serving Arizona Statewide</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
