@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum JobStatus {
+  LEAD
+  ESTIMATE
+  CONTRACT_SIGNED
+  SCHEDULED
+  IN_PROGRESS
+  PUNCH_LIST
+  COMPLETE
+  INVOICED
+  PAID
+}
+
+enum BudgetCategory {
+  LABOR
+  MATERIALS
+  EQUIPMENT
+  SUBCONTRACTOR
+  OTHER
+}
+
+enum ChangeOrderStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  name      String
+  email     String?
+  phone     String?
+  address   String?
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  jobs Job[]
+}
+
+model Job {
+  id                 String    @id @default(cuid())
+  jobNumber          String    @unique
+  title              String
+  description        String?
+  siteAddress        String?
+  status             JobStatus @default(LEAD)
+  estimatedStartDate DateTime?
+  actualStartDate    DateTime?
+  estimatedEndDate   DateTime?
+  actualEndDate      DateTime?
+  estimatedBudget    Float?
+  notes              String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  clientId String
+  client   Client @relation(fields: [clientId], references: [id])
+
+  budgetItems    BudgetItem[]
+  changeOrders   ChangeOrder[]
+  jobNotes       JobNote[]
+  scheduleBlocks ScheduleBlock[]
+}
+
+model BudgetItem {
+  id              String         @id @default(cuid())
+  category        BudgetCategory @default(OTHER)
+  description     String
+  estimatedAmount Float          @default(0)
+  actualAmount    Float          @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  jobId String
+  job   Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model ChangeOrder {
+  id          String            @id @default(cuid())
+  coNumber    Int
+  description String
+  amount      Float
+  status      ChangeOrderStatus @default(PENDING)
+  notes       String?
+  createdAt   DateTime          @default(now())
+  approvedAt  DateTime?
+  updatedAt   DateTime          @updatedAt
+
+  jobId String
+  job   Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model JobNote {
+  id        String   @id @default(cuid())
+  content   String
+  createdAt DateTime @default(now())
+
+  jobId String
+  job   Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model ScheduleBlock {
+  id        String   @id @default(cuid())
+  title     String
+  start     DateTime
+  end       DateTime
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  jobId String
+  job   Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
