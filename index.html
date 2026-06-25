@@ -229,20 +229,124 @@
   <section class="clients-section section-pad-sm">
     <div class="container">
       <p class="clients-label">Who We Work With</p>
+    </div>
+    <div class="clients-track-clip">
       <div class="clients-logos">
-        <span class="client-logo">AutoZone</span>
-        <span class="client-logo">Banner Health</span>
-        <span class="client-logo">Starbucks</span>
-        <span class="client-logo">Home Depot</span>
-        <span class="client-logo">Porsche</span>
-        <span class="client-logo">Hilton</span>
-        <span class="client-logo">ASU</span>
-        <span class="client-logo">City of Avondale</span>
-        <span class="client-logo">City of El Mirage</span>
-        <span class="client-logo">City of Peoria</span>
+        <div class="client-logo"><img src="photos/client-logos/ASU.png" alt="ASU"></div>
+        <div class="client-logo"><img src="photos/client-logos/DicksSportingGoods.png" alt="Dick's Sporting Goods"></div>
+        <div class="client-logo"><img src="photos/client-logos/DiscountTire.png" alt="Discount Tire"></div>
+        <div class="client-logo"><img src="photos/client-logos/ExtendedStay.png" alt="Extended Stay"></div>
+        <div class="client-logo"><img src="photos/client-logos/FocusOnTheFamily.jpg" alt="Focus on the Family"></div>
+        <div class="client-logo"><img src="photos/client-logos/Frys.png" alt="Fry's"></div>
+        <div class="client-logo"><img src="photos/client-logos/Genesis.webp" alt="Genesis"></div>
+        <div class="client-logo"><img src="photos/client-logos/GreatHearts.png" alt="Great Hearts"></div>
+        <div class="client-logo"><img src="photos/client-logos/Gulfstream.png" alt="Gulfstream"></div>
+        <div class="client-logo"><img src="photos/client-logos/LarryHMiller.jpg" alt="Larry H. Miller"></div>
+        <div class="client-logo"><img src="photos/client-logos/Maverik.jpg" alt="Maverik"></div>
+        <div class="client-logo"><img src="photos/client-logos/MountainsideFitness.png" alt="Mountainside Fitness"></div>
+        <div class="client-logo"><img src="photos/client-logos/Popstroke.jpeg" alt="PopStroke"></div>
+        <div class="client-logo"><img src="photos/client-logos/Porsche.png" alt="Porsche"></div>
+        <div class="client-logo"><img src="photos/client-logos/QuikTrip.png" alt="QuikTrip"></div>
+        <div class="client-logo"><img src="photos/client-logos/RedMountainCC.jpg" alt="Red Mountain Country Club"></div>
+        <div class="client-logo"><img src="photos/client-logos/SpringhillSuites.png" alt="Springhill Suites"></div>
+        <div class="client-logo"><img src="photos/client-logos/SSCW.webp" alt="SSCW"></div>
+        <div class="client-logo"><img src="photos/client-logos/Sun_Valley_Logo.jpg" alt="Sun Valley"></div>
+        <div class="client-logo"><img src="photos/client-logos/SwitchyardQC.png" alt="Switchyard QC"></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="client-logo"><img src="photos/client-logos/ASU.png" alt="ASU"></div>
+        <div class="client-logo"><img src="photos/client-logos/DicksSportingGoods.png" alt="Dick's Sporting Goods"></div>
+        <div class="client-logo"><img src="photos/client-logos/DiscountTire.png" alt="Discount Tire"></div>
+        <div class="client-logo"><img src="photos/client-logos/ExtendedStay.png" alt="Extended Stay"></div>
+        <div class="client-logo"><img src="photos/client-logos/FocusOnTheFamily.jpg" alt="Focus on the Family"></div>
+        <div class="client-logo"><img src="photos/client-logos/Frys.png" alt="Fry's"></div>
+        <div class="client-logo"><img src="photos/client-logos/Genesis.webp" alt="Genesis"></div>
+        <div class="client-logo"><img src="photos/client-logos/GreatHearts.png" alt="Great Hearts"></div>
+        <div class="client-logo"><img src="photos/client-logos/Gulfstream.png" alt="Gulfstream"></div>
+        <div class="client-logo"><img src="photos/client-logos/LarryHMiller.jpg" alt="Larry H. Miller"></div>
+        <div class="client-logo"><img src="photos/client-logos/Maverik.jpg" alt="Maverik"></div>
+        <div class="client-logo"><img src="photos/client-logos/MountainsideFitness.png" alt="Mountainside Fitness"></div>
+        <div class="client-logo"><img src="photos/client-logos/Popstroke.jpeg" alt="PopStroke"></div>
+        <div class="client-logo"><img src="photos/client-logos/Porsche.png" alt="Porsche"></div>
+        <div class="client-logo"><img src="photos/client-logos/QuikTrip.png" alt="QuikTrip"></div>
+        <div class="client-logo"><img src="photos/client-logos/RedMountainCC.jpg" alt="Red Mountain Country Club"></div>
+        <div class="client-logo"><img src="photos/client-logos/SpringhillSuites.png" alt="Springhill Suites"></div>
+        <div class="client-logo"><img src="photos/client-logos/SSCW.webp" alt="SSCW"></div>
+        <div class="client-logo"><img src="photos/client-logos/Sun_Valley_Logo.jpg" alt="Sun Valley"></div>
+        <div class="client-logo"><img src="photos/client-logos/SwitchyardQC.png" alt="Switchyard QC"></div>
       </div>
     </div>
   </section>
+  <script>
+    (function() {
+      const clip = document.querySelector('.clients-track-clip');
+      const track = document.querySelector('.clients-logos');
+      const speed = 0.6;
+      let paused = false;
+      let resumeTimer;
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartScroll = 0;
+
+      function halfWidth() { return track.scrollWidth / 2; }
+
+      function tick() {
+        if (!paused) {
+          clip.scrollLeft += speed;
+          if (clip.scrollLeft >= halfWidth()) clip.scrollLeft -= halfWidth();
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function pause() {
+        paused = true;
+        clearTimeout(resumeTimer);
+      }
+      function scheduleResume() {
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function() { paused = false; }, 1500);
+      }
+
+      clip.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        dragStartX = e.pageX;
+        dragStartScroll = clip.scrollLeft;
+        clip.style.cursor = 'grabbing';
+        pause();
+      });
+      window.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        var delta = dragStartX - e.pageX;
+        var next = dragStartScroll + delta;
+        var half = halfWidth();
+        if (next >= half) next -= half;
+        if (next < 0) next += half;
+        clip.scrollLeft = next;
+      });
+      window.addEventListener('mouseup', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        clip.style.cursor = 'grab';
+        scheduleResume();
+      });
+      clip.addEventListener('touchstart', function(e) {
+        dragStartX = e.touches[0].pageX;
+        dragStartScroll = clip.scrollLeft;
+        pause();
+      }, { passive: true });
+      clip.addEventListener('touchmove', function(e) {
+        var delta = dragStartX - e.touches[0].pageX;
+        var next = dragStartScroll + delta;
+        var half = halfWidth();
+        if (next >= half) next -= half;
+        if (next < 0) next += half;
+        clip.scrollLeft = next;
+      }, { passive: true });
+      clip.addEventListener('touchend', scheduleResume);
+
+      clip.style.cursor = 'grab';
+      requestAnimationFrame(tick);
+    })();
+  </script>
 
   <!-- ======== FOOTER ======== -->
   <footer class="footer">

@@ -878,24 +878,41 @@ p { color: var(--gray-600); }
   margin-bottom: 2rem;
 }
 
+.clients-track-clip {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.clients-track-clip::-webkit-scrollbar { display: none; }
+
 .clients-logos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem 3rem;
+  flex-wrap: nowrap;
   align-items: center;
+  width: max-content;
 }
 
 .client-logo {
-  font-family: var(--font-head);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gray-400);
-  transition: color var(--transition);
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  transition: transform var(--transition);
+  user-select: none;
 }
-.client-logo:hover { color: var(--navy); }
+.client-logo:hover { transform: scale(1.07); }
+.client-logo img {
+  max-height: 60px;
+  max-width: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
 
 /* ---------- Contact Section ---------- */
 .contact-grid {
